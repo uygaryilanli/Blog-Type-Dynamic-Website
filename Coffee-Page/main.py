@@ -24,7 +24,7 @@ def cafes():
 @app.route("/add_cafe", methods=["GET", "POST"])
 def add_cafe():
     if request.method == "POST":
-        cafe_name = request.form.get("cafe_name")
+        cafe_name = request.form.get("cafe_name").title()
         coffee_quality = request.form.get("coffee_quality")
         wifi_quality = request.form.get("wifi_quality")
         with open("cafes.csv", mode="a", newline="", encoding="utf-8") as file:
